@@ -13,7 +13,7 @@ Mattermail post the email using this rules (if "`NoRedirectChannel:false`"):
 
 1 - If the email subject contains "`[#anychannelname] blablabla`" or "`[@usertosend] xxxxxx`", Mattermail will try to post to the channel or to the username
 
-2 - If the email subject doesn't contain channel or username, Mattermail will try to post the channel defined in `config.json`
+2 - If the email subject doesn't contain channel or username, Mattermail will try to post the channel defined in `config/config.json`
 
 3 - If Mattermail can not post the email will try to post in "Town Square"
 
@@ -29,7 +29,7 @@ Mattermail post the email using this rules (if "`NoRedirectChannel:false`"):
 2. Get the *Channel Handle* of the channel and check if the user has permission to post in this channel
 ![mattermail channel_handle](https://github.com/rodrigocorsi2/mattermail/raw/master/img/channel_handle.png)
 
-3. Edit the file config.json, e.g.:
+3. Create a file config/config.json, e.g.:
 
 ```javascript
 [
@@ -86,6 +86,7 @@ Mattermail post the email using this rules (if "`NoRedirectChannel:false`"):
 ```
 $ ./mattermail > /var/log/mattermail.log 2>&1 &
 ```
+
 ## Options
 
 ```bash
@@ -103,6 +104,16 @@ You need [Go](http://golang.org) to build this project
 ```bash
 $ go get github.com/rodrigocorsi2/mattermail
 ```
+
+## Building and running with Docker Compose
+
+You need Docker and Docker Compose on the host: https://docs.docker.com/compose/install/
+
+```bash
+$ docker-compose build
+$ docker-compose up -d 
+```
+
 
 ### If you want to build MatterMail to Mattermost 2.2 you need to use `release-2.2` branch
 

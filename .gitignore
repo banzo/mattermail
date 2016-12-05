@@ -1,3 +1,5 @@
 dist/*
 *.out
 *.coverprofile
+vendor/
+config/config.json
